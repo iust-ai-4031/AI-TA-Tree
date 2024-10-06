@@ -4,7 +4,7 @@
 
 This project implements a multi-node categorical decision tree classifier that is compatible with scikit-learn. Unlike binary decision trees, this classifier is designed to work with categorical features and can have multiple branches at each node. The implementation is based on the `MultiNodeCategoricalDecisionTree` class, which inherits from scikit-learn's `BaseEstimator` and `ClassifierMixin`.
 
-The purpose of this assignment is to give students hands-on experience in implementing a decision tree algorithm from scratch while maintaining compatibility with a popular machine learning library.
+The purpose of this project is to provide a hands-on experience in implementing a decision tree algorithm from scratch while ensuring compatibility with a popular machine learning library.
 
 ## Setting Up the Environment
 
@@ -31,12 +31,7 @@ To set up the project environment and install the necessary libraries, follow th
 
 5. Install the required libraries:
    ```
-   pip install numpy pandas scikit-learn jupyter notebook nbconvert
-   ```
-
-6. To create a Jupyter notebook from the example script, run:
-   ```
-   jupyter nbconvert --to notebook --execute decision_tree_example.py
+   pip install numpy -r requirements.txt
    ```
 
 Now you're ready to start working on the project!
@@ -78,7 +73,17 @@ To complete the `MultiNodeCategoricalDecisionTree` class, you need to implement 
    - The probabilities should be based on the distribution of classes in the leaf node.
    - Return an array of probabilities for each class.
 
-Additional Tips:
+## Project Structure
+
+The project includes two main Jupyter notebooks for practical implementation:
+
+1. **Titanic Challenge Notebook** (`titanic/main-titanic.ipynb`):
+   - This notebook provides a basic framework for the Titanic dataset challenge, including data loading, preprocessing, exploratory data analysis (EDA), model training, and evaluation.
+
+2. **COVID-19 Challenge Notebook** (`corona/main-corona.ipynb`):
+   - This notebook focuses on analyzing COVID-19 testing data for trend analysis and policy-making, with similar sections for data loading, preprocessing, and model evaluation.
+
+## Additional Tips
 - Use numpy operations for efficiency whenever possible.
 - Make sure to handle edge cases, such as empty nodes or features with only one unique value.
 - Consider adding helper methods for calculating impurity (e.g., Gini impurity or entropy) and for splitting the data.

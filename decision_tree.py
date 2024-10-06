@@ -125,6 +125,82 @@ class MultiNodeCategoricalDecisionTree(BaseEstimator, ClassifierMixin):
         # TODO: Implement feature importance calculation
         pass
 
+    def _calculate_entropy(self, y: np.ndarray) -> float:
+        """
+        Calculate the entropy of a dataset.
+
+        Parameters
+        ----------
+        y : array-like of shape (n_samples,)
+            The target values (class labels).
+
+        Returns
+        -------
+        entropy : float
+            The calculated entropy.
+        """
+        # TODO: Implement entropy calculation
+        pass
+
+    def _calculate_gini(self, y: np.ndarray) -> float:
+        """
+        Calculate the Gini index of a dataset.
+
+        Parameters
+        ----------
+        y : array-like of shape (n_samples,)
+            The target values (class labels).
+
+        Returns
+        -------
+        gini : float
+            The calculated Gini index.
+        """
+        # TODO: Implement Gini index calculation
+        pass
+
+    def _calculate_feature_entropy(self, X: np.ndarray, y: np.ndarray, feature_idx: int) -> float:
+        """
+        Calculate the entropy of a specific feature.
+
+        Parameters
+        ----------
+        X : array-like of shape (n_samples, n_features)
+            The training input samples.
+        y : array-like of shape (n_samples,)
+            The target values (class labels).
+        feature_idx : int
+            The index of the feature to calculate entropy for.
+
+        Returns
+        -------
+        feature_entropy : float
+            The calculated feature entropy.
+        """
+        # TODO: Implement feature entropy calculation
+        pass
+
+    def _calculate_feature_gini(self, X: np.ndarray, y: np.ndarray, feature_idx: int) -> float:
+        """
+        Calculate the Gini index of a specific feature.
+
+        Parameters
+        ----------
+        X : array-like of shape (n_samples, n_features)
+            The training input samples.
+        y : array-like of shape (n_samples,)
+            The target values (class labels).
+        feature_idx : int
+            The index of the feature to calculate Gini index for.
+
+        Returns
+        -------
+        feature_gini : float
+            The calculated feature Gini index.
+        """
+        # TODO: Implement feature Gini index calculation
+        pass
+
     def predict(self, X: np.ndarray) -> np.ndarray:
         """
         Predict class for X.
@@ -160,37 +236,3 @@ class MultiNodeCategoricalDecisionTree(BaseEstimator, ClassifierMixin):
         # TODO: Implement the prediction logic for a single sample
         pass
 
-    def predict_proba(self, X: np.ndarray) -> np.ndarray:
-        """
-        Predict class probabilities for X.
-
-        Parameters
-        ----------
-        X : array-like of shape (n_samples, n_features)
-            The input samples.
-
-        Returns
-        -------
-        proba : array-like of shape (n_samples, n_classes)
-            The class probabilities of the input samples.
-        """
-        check_is_fitted(self)
-        X = check_array(X)
-        return np.array([self._predict_proba_single(x) for x in X])
-
-    def _predict_proba_single(self, x: np.ndarray) -> np.ndarray:
-        """
-        Predict class probabilities for a single sample.
-
-        Parameters
-        ----------
-        x : array-like of shape (n_features,)
-            The input sample.
-
-        Returns
-        -------
-        proba : array-like of shape (n_classes,)
-            The class probabilities of the input sample.
-        """
-        # TODO: Implement the probability prediction logic for a single sample
-        pass
